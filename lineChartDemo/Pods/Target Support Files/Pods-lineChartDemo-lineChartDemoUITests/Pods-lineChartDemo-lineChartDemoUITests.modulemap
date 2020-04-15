@@ -1,0 +1,6 @@
+framework module Pods_lineChartDemo_lineChartDemoUITests {
+  umbrella header "Pods-lineChartDemo-lineChartDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
