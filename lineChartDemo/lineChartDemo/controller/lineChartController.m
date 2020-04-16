@@ -50,6 +50,7 @@
     _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIView * headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10)];
     headerView.backgroundColor = [UIColor whiteColor];
     _tableView.tableHeaderView = headerView;
@@ -145,7 +146,14 @@
             
             model.x = [NSString stringWithFormat:@"201901%d",i + 1];
         }
-        model.y = [NSString stringWithFormat:@"%d",arc4random()%100];
+        if (i % 2) {
+            
+            model.y = [NSString stringWithFormat:@"%d",arc4random()%100];
+        }else{
+            
+            model.y = [NSString stringWithFormat:@"%d",100 + arc4random()%100];
+        }
+        
         [array addObject:model];
     }
     
@@ -167,7 +175,17 @@
             
             model.x = [NSString stringWithFormat:@"201901%d",i + 1];
         }
-        model.y = [NSString stringWithFormat:@"%f",(double)(arc4random()%100)/100];
+        
+        
+        if (i % 2) {
+         
+            model.y = [NSString stringWithFormat:@"%f",(double)((50 + arc4random()%50))/100];
+        }else{
+            
+            model.y = [NSString stringWithFormat:@"%f",(double)(arc4random()%50)/100];
+        }
+        
+        
         [array addObject:model];
     }
     
@@ -189,7 +207,16 @@
             
             model.x = [NSString stringWithFormat:@"201901%d",i + 1];
         }
-        model.y = [NSString stringWithFormat:@"%d",1000 - arc4random()%2000];
+        
+        if (i % 2) {
+           
+            model.y = [NSString stringWithFormat:@"%d",100 - arc4random()%400];
+        }else{
+            
+            model.y = [NSString stringWithFormat:@"%d",300 - arc4random()%400];
+        }
+        
+        
         [array addObject:model];
     }
     
